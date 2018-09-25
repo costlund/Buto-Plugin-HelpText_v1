@@ -25,6 +25,7 @@ tables:
       helptext_text_id:
         primary_key: true
         type: varchar(50)
+        not_null: true
         foreing_key:
           reference_table: helptext_text
           reference_field: id
@@ -38,7 +39,6 @@ extra:
       default: CURRENT_TIMESTAMP
     updated_at:
       type: timestamp
-      default: 'null'
     created_by:
       type: varchar(50)
     updated_by:
