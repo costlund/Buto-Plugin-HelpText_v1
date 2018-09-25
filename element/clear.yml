@@ -1,0 +1,25 @@
+-
+  type: p
+  innerHTML:
+    -
+      type: i
+      innerHTML: Help text showing here are closed or confirmed by you.
+-
+  type: p
+  innerHTML:
+    -
+      type: a
+      attribute:
+        class: btn btn-default btn-sm
+        id: btn_helptext_clear
+      innerHTML: Restore
+-
+  type: script
+  innerHTML: |
+    $('#btn_helptext_clear').on('click', function () {
+      $.get( '/helptext/clear', function( data ) {
+        PluginWfAjax.update('modal_helptext_body');
+      });
+    })
+  
+  

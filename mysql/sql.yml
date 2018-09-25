@@ -1,0 +1,103 @@
+text_select_one:
+  sql: |
+    select 
+    t.id,
+    t.headline,
+    t.description
+    from helptext_text as t
+    where t.id=?
+    ;
+  select:
+    - id
+    - headline
+    - description
+  params:
+    id:
+      type: s
+      value: _
+text_select_list:
+  sqlzzz: |
+    select 
+    t.id,
+    t.headline,
+    t.description,
+    t.place,
+    if(isnull(c.helptext_text_id), 'No', 'Yes') as is_confirm
+    from helptext_text as t
+    left join helptext_confirm as c on t.id=c.helptext_text_id
+    order by t.headline
+    ;
+  sql: |
+    select 
+    t.id,
+    t.headline,
+    t.description,
+    t.place
+    from helptext_text as t
+    order by t.headline
+    ;
+  select:
+    - id
+    - headline
+    - description
+    - place
+    
+text_insert:
+  sql: "insert into helptext_text (id, created_by) values (?, '[user_id]');"
+  params:
+    id:
+      type: s
+      value: _
+text_update:
+  sql: "update helptext_text set headline=?, description=?, updated_at=now(), updated_by='[user_id]' where id=?;"
+  params:
+    headline:
+      type: s
+      value: _
+    description:
+      type: s
+      value: _
+    id:
+      type: s
+      value: _
+  
+  
+confirm_select_one:
+  sql: select account_id, helptext_text_id from helptext_confirm where account_id='[user_id]' and helptext_text_id=?;
+  params:
+    helptext_text_id:
+      type: s
+      value: _
+  select:
+    - account_id
+    - helptext_text_id
+confirm_insert:
+  sql: insert into helptext_confirm (account_id, helptext_text_id, created_by) values ('[user_id]', ?, '[user_id]');
+  params:
+    helptext_text_id:
+      type: s
+      value: _
+confirm_select_list:  
+  sql: select helptext_text_id from helptext_confirm where account_id='[user_id]';
+  select:
+    - helptext_text_id
+confirm_delete:
+  sql: delete from helptext_confirm where account_id='[user_id]';
+confirm_select_by_text_count:
+  sql: select count(account_id) from helptext_confirm where helptext_text_id=?;
+  params:
+    helptext_text_id:
+      type: s
+      value: _
+  select:
+    - count
+confirm_delete_by_text:
+  sql: delete from helptext_confirm where helptext_text_id=?;
+  params:
+    helptext_text_id:
+      type: s
+      value: _
+  
+  
+  
+  

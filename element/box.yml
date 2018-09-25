@@ -1,0 +1,47 @@
+box:
+  type: div
+  attribute:
+    class: alert alert-info
+    id: alert
+  innerHTML:
+    -
+      type: p
+      innerHTML:
+        -
+          type: span
+          attribute:
+            class: glyphicon glyphicon-info-sign
+            aria-hidden: true
+        -
+          type: strong
+          attribute:
+            id: helptext_text_headline
+          innerHTML: _
+    -
+      type: p
+      attribute:
+        id: helptext_text_description
+      innerHTML: _
+    -
+      type: p
+      innerHTML:
+        -
+          type: i
+          attribute:
+            id: helptext_text_place
+          innerHTML: _
+    -
+      type: p
+      innerHTML:
+        -
+          type: span
+          innerHTML: 'Confirmed:'
+        -
+          type: span
+          attribute:
+            id: confirmed
+          innerHTML: (Endast session / Ja)
+
+    
+    
+    

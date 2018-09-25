@@ -1,0 +1,74 @@
+-
+  type: div
+  attribute:
+    id: helptext_
+    class: alert alert-info alert-dismissible
+    data-id: _
+    data-confirm: 'no'
+  innerHTML: 
+    -
+      type: button
+      attribute:
+        type: button
+        class: close
+        data-dismiss: alert
+        aria-label: Close
+      innerHTML:
+        -
+          type: span
+          attribute:
+            aria-hidden: true
+          innerHTML: '&times;'
+    -
+      type: p
+      attribute:
+        title: PluginHelpText_v1 for Buto framework.
+      innerHTML:
+        -
+          type: span
+          attribute:
+            class: glyphicon glyphicon-info-sign
+            aria-hidden: true
+        -
+          type: strong
+          attribute:
+            id: helptext_text_headline
+          innerHTML: _
+    -
+      type: p
+      attribute:
+        id: helptext_text_description
+      innerHTML: _
+    -
+      type: p
+      innerHTML:
+        -
+          type: button
+          attribute:
+            id: btn_confirm
+            type: button
+            class: btn btn-default btn-sm
+            data-dismiss: alert
+            onclick: "this.parentNode.parentNode.setAttribute('data-confirm', 'yes');"
+          innerHTML: 'Got it!'
+        -
+          type: a
+          attribute:
+            title: 'Webmaster only.'
+            style: 'float:right'
+            class: btn btn-warning btn-sm
+            onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.parentNode.parentNode.getAttribute('data-id'), lable: 'Hjälptext', footer_btn_close: true, footer_btn_close_text: PluginI18nJson_v1.i18n('Close')})"
+          innerHTML: Edit
+          settings:
+            role:
+              item:
+                - webmaster
+-
+  type: script
+  attribute:
+    id: script
+  innerHTML: |
+    $('#helptext_').on('closed.bs.alert', function () {
+      $.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/'+this.getAttribute('data-confirm'), function( data ) {
+      });
+    })

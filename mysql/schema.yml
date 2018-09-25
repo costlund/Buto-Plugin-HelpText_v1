@@ -1,0 +1,50 @@
+tables:
+  helptext_text:
+    field:
+      id:
+        primary_key: true
+        type: varchar(50)
+        not_null: true
+      headline:
+        type: varchar(255)
+      description:
+        type: text
+      place:
+        type: text
+  helptext_confirm:
+    field:
+      account_id:
+        primary_key: true
+        type: varchar(50)
+        not_null: true
+        foreing_key:
+          reference_table: account
+          reference_field: id
+          on_delete: CASCADE
+          on_update: CASCADE        
+      helptext_text_id:
+        primary_key: true
+        type: varchar(50)
+        foreing_key:
+          reference_table: helptext_text
+          reference_field: id
+          on_delete: CASCADE
+          on_update: CASCADE
+extra:
+  _description: Extra field to add to each table if not exist in schema.
+  field:
+    created_at:
+      type: timestamp
+      default: CURRENT_TIMESTAMP
+    updated_at:
+      type: timestamp
+      default: 'null'
+    created_by:
+      type: varchar(50)
+    updated_by:
+      type: varchar(50)
+      
+        
+        
+        
+        

@@ -1,0 +1,39 @@
+url: '/helptext/capture'
+ajax: true
+submit_value: Save
+id: frm_helptext
+items:
+  id:
+    type: hidden
+    label: id
+    mandatory: true
+  headline:
+    type: varchar
+    label: Headline
+    mandatory: true
+  description:
+    type: text
+    label: Description
+    mandatory: true
+  clear:
+    type: varchar
+    label: Clear
+    option:
+      '': ''
+      '1': 'Yes'
+    info:
+      text: Clear user confirms on save.
+render:
+  plugin: help/text_v1
+  method: form_render
+capture:
+  plugin: help/text_v1
+  method: form_capture
+buttons:
+  close:
+    type: a
+    attribute:
+      class: btn btn-default
+      data-dismiss: modal
+    innerHTML: Close
+    
