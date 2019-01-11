@@ -7,6 +7,7 @@ class PluginHelpText_v1{
 // <editor-fold defaultstate="collapsed" desc="Construct">
   function __construct($buto) {
     if($buto){
+      wfPlugin::enable('wf/form_v2');
       wfPlugin::includeonce('wf/yml');
       wfPlugin::includeonce('wf/mysql');
       $this->mysql =new PluginWfMysql();
