@@ -33,7 +33,7 @@ buttons:
   close:
     type: a
     attribute:
-      class: btn btn-default
+      class: btn btn-primary
       data-dismiss: modal
     innerHTML: Close
     

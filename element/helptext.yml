@@ -47,7 +47,7 @@
           attribute:
             id: btn_confirm
             type: button
-            class: btn btn-default btn-sm
+            class: btn btn-primary btn-sm
             data-dismiss: alert
             onclick: "this.parentNode.parentNode.setAttribute('data-confirm', 'yes');"
           innerHTML: 'Got it!'

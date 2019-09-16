@@ -10,7 +10,7 @@
     -
       type: a
       attribute:
-        class: btn btn-default btn-sm
+        class: btn btn-primary btn-sm
         id: btn_helptext_clear
       innerHTML: Restore
 -
