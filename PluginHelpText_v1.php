@@ -1,10 +1,7 @@
 <?php
 class PluginHelpText_v1{
-// <editor-fold defaultstate="collapsed" desc="Variables">
   public $settings;
   public $mysql;
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Construct">
   function __construct($buto) {
     if($buto){
       wfPlugin::enable('wf/form_v2');
@@ -14,8 +11,6 @@ class PluginHelpText_v1{
       $this->settings = wfPlugin::getPluginSettings('help/text_v1', true);
     }
   }
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Methods">
   public function getElement($name){
     return new PluginWfYml(__DIR__."/element/$name.yml");
   }
@@ -43,8 +38,6 @@ class PluginHelpText_v1{
     }
     return array("$('#modal_helptext').modal('hide');alert('Item was saved. Please update page where helptext occured.');");
   }
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Database">
   public function db_open(){
     $this->mysql->open($this->settings->get('data/mysql'));
   }
@@ -160,8 +153,6 @@ class PluginHelpText_v1{
     $this->mysql->execute($sql->get());
     return null;
   }
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Session">
   private function session_set($helptext_text_id){
     $_SESSION['plugin']['help']['text_v1']['confirm'][$helptext_text_id] = true;
     return null;
@@ -172,8 +163,6 @@ class PluginHelpText_v1{
   private function session_clear(){
     unset($_SESSION['plugin']['help']['text_v1']['confirm']);
   }
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Widget">
   public function widget_helptext($data){
     /**
      * Plugin data.
@@ -221,8 +210,6 @@ class PluginHelpText_v1{
      */
     wfDocument::renderElement($element->get());
   }
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Page">
   public function page_confirm(){
     $this->db_confirm_insert(wfRequest::get('id'));
     exit;
@@ -296,8 +283,6 @@ class PluginHelpText_v1{
     $widget = wfDocument::createWidget('wf/form_v2', 'capture', $form->get());
     wfDocument::renderElement(array($widget));
   }
-// </editor-fold>
-// <editor-fold defaultstate="collapsed" desc="Event">
   public function event_signin(){
     $rs = $this->db_confirm_select_list();
     foreach ($rs as $key => $value) {
@@ -305,5 +290,4 @@ class PluginHelpText_v1{
     }
     return null;
   }
-// </editor-fold>
 }
