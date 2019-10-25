@@ -4,14 +4,14 @@
     id: rs:helptext_id
     data-id: rs:id
     data-confirm: 'no'
-  innerHTML: 
+  innerHTML:
     -
       type: p
       innerHTML:
         -
           type: a
           attribute:
-            class: btn btn-primary btn-sm
+            class: btn btn-light btn-sm
             type: button
             data-toggle: collapse
             data-target: rs:HT-collapse_id
@@ -22,23 +22,27 @@
           innerHTML:
             -
               type: img
+              settings:
+                disabled: rs:confirm
               attribute:
                 src: /plugin/icons/octicons/build/svg/question.svg
-            -
-              type: strong
-              innerHTML: rs:headline
             -
               type: img
               settings:
                 enabled: rs:confirm
               attribute:
-                src: /plugin/icons/octicons/build/svg/check.svg
+                src: /plugin/icons/octicons/build/svg/question.svg
+                style:
+                  opacity: '0.2'
     -
       type: div
       attribute:
         class: collapse alert alert-info
         id: rs:collapse_id
       innerHTML:
+        -
+          type: h2
+          innerHTML: rs:headline
         -
           type: p
           innerHTML: rs:description

@@ -8,10 +8,9 @@ box:
       type: p
       innerHTML:
         -
-          type: span
+          type: img
           attribute:
-            class: glyphicon glyphicon-info-sign
-            aria-hidden: true
+            src: /plugin/icons/octicons/build/svg/question.svg
         -
           type: strong
           attribute:
