@@ -189,6 +189,10 @@ class PluginHelpText_v1{
       throw new Exception('PluginHelpText_v1 says: Param id is empty.');
     }
     /**
+     * 
+     */
+    $rs->set('description', str_replace("\n", '<br>', $rs->get('description')));
+    /**
      * Check session.
      */
     if($this->session_exist($rs->get('id'))){
