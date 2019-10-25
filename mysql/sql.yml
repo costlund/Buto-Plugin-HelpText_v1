@@ -16,17 +16,6 @@ text_select_one:
       type: s
       value: _
 text_select_list:
-  sqlzzz: |
-    select 
-    t.id,
-    t.headline,
-    t.description,
-    t.place,
-    if(isnull(c.helptext_text_id), 'No', 'Yes') as is_confirm
-    from helptext_text as t
-    left join helptext_confirm as c on t.id=c.helptext_text_id
-    order by t.headline
-    ;
   sql: |
     select 
     t.id,
@@ -60,8 +49,6 @@ text_update:
     id:
       type: s
       value: _
-  
-  
 confirm_select_one:
   sql: select account_id, helptext_text_id from helptext_confirm where account_id='[user_id]' and helptext_text_id=?;
   params:
@@ -97,7 +84,4 @@ confirm_delete_by_text:
     helptext_text_id:
       type: s
       value: _
-  
-  
-  
   

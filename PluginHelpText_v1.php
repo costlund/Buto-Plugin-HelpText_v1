@@ -173,22 +173,28 @@ class PluginHelpText_v1{
      */
     $rs = $this->db_text_select_one($data->get('data/id'));
     /**
+     * 
+     */
+    $rs->set('helptext_id', 'helptext_'.$rs->get('id'));
+    $rs->set('collapse_id', 'collapse_'.$rs->get('id'));
+    $rs->set('HT-collapse_id', '#collapse_'.$rs->get('id'));
+    /**
      * If record is missing.
      */
     if(!$rs->get('id') && wfUser::hasRole('webmaster')){
-      //echo '<p><i>Webmaster: Could not find any record in table helptext_text with id '.$data->get('data/id').'.</i></p>';
       $rs->set('id', $data->get('data/id'));
       $rs->set('headline', '_');
       $rs->set('description', '_');
-      //return null;
     }elseif(!$rs->get('id')){
-      return null;
+      throw new Exception('PluginHelpText_v1 says: Param id is empty.');
     }
     /**
      * Check session.
      */
     if($this->session_exist($rs->get('id'))){
-      return null;
+      $rs->set('confirm', true);
+    }else{
+      $rs->set('confirm', false);
     }
     /**
      * Element.
@@ -197,14 +203,7 @@ class PluginHelpText_v1{
     /**
      * Set element.
      */
-    $element->setById('helptext_text_headline', 'innerHTML', $rs->get('headline'));
-    $element->setById('helptext_text_description', 'innerHTML', $rs->get('description'));
-    $element->setById('helptext_', 'attribute/data-id', $rs->get('id'));
-    $element->setById('helptext_', 'attribute/id', 'helptext_'.$rs->get('id'));
-    //$element->setById('btn_confirm', 'attribute/data-id', 'helptext_'.$rs->get('id'));
-    $script = $element->getById('script', 'innerHTML');
-    $script = str_replace('#helptext_', '#helptext_'.$rs->get('id'), $script->get());
-    $script = $element->setById('script', 'innerHTML', $script);
+    $element->setByTag($rs->get());
     /**
      * Render.
      */
@@ -225,7 +224,6 @@ class PluginHelpText_v1{
     $clear = $this->getElement('clear');
     $box = $this->getElement('box');
     $rs = $this->db_text_select_list();
-    //wfHelp::yml_dump($rs);
     $element = array();
     foreach ($rs as $key => $value) {
       $item = new PluginWfArray($value);
