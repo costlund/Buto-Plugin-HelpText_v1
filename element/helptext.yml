@@ -18,7 +18,7 @@
             aria-expanded: false
             aria-controls: rs:collapse_id
             data-id: rs:id
-            onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/no', function( data ) {});"
+            onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/no', function( data ) {});this.getElementsByTagName('img')[0].style.opacity='0.2';"
           innerHTML:
             -
               type: img
