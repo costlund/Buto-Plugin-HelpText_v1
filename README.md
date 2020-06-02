@@ -45,7 +45,7 @@ plugin_modules:
 ```
 Show this page in a modal.
 ```
-PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/helptext', lable: 'Helptext', footer_btn_close: true})
+PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/helptext', label: 'Helptext', footer_btn_close: true})
 ```
 
 ## Schema

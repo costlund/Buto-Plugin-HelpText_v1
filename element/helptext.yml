@@ -78,7 +78,7 @@
                 title: 'Webmaster only.'
                 class: btn btn-warning btn-sm
                 data-id: rs:id
-                onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.getAttribute('data-id'), lable: 'Hjälptext', footer_btn_close: true, footer_btn_close_text: PluginI18nJson_v1.i18n('Close')})"
+                onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.getAttribute('data-id'), label: 'Hjälptext', footer_btn_close: true, footer_btn_close_text: PluginI18nJson_v1.i18n('Close')})"
               innerHTML: Edit
               settings:
                 role:

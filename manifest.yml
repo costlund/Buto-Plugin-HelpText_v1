@@ -3,7 +3,7 @@ history:
   '1.2.0':
     date: '2020-06-02'
     title: Button Got it, layout, icon
-    description: Button Got it is always visible and collaps content on click. Layout fix. Lable along with icon.
+    description: Button Got it is always visible and collaps content on click. Layout fix. Label along with icon.
   '1.1.0':
     date: '2019-10-25'
     title: New layout.
