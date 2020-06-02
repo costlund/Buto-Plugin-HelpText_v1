@@ -17,8 +17,9 @@
             data-target: rs:HT-collapse_id
             aria-expanded: false
             aria-controls: rs:collapse_id
+            id: rs:id_collapse
             data-id: rs:id
-            onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/no', function( data ) {});this.getElementsByTagName('img')[0].style.opacity='0.2';"
+            onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/no', function( data ) {});this.getElementsByTagName('img')[0].style.opacity='0.2';this.getElementsByTagName('span')[0].style.opacity='0.2';"
           innerHTML:
             -
               type: img
@@ -34,6 +35,19 @@
                 src: /plugin/icons/octicons/build/svg/question.svg
                 style:
                   opacity: '0.2'
+            -
+              type: span
+              settings:
+                disabled: rs:confirm
+              innerHTML: rs:headline
+            -
+              type: span
+              settings:
+                enabled: rs:confirm
+              attribute:
+                style:
+                  opacity: '0.2'
+              innerHTML: rs:headline
     -
       type: div
       attribute:
@@ -51,14 +65,12 @@
           innerHTML:
             -
               type: button
-              settings:
-                disabled: rs:confirm
               attribute:
                 id: btn_confirm
                 type: button
                 class: btn btn-primary btn-sm
                 data-id: rs:id
-                onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/yes', function( data ) {});this.style.display='none';"
+                onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/yes', function( data ) {});console.log(this.getAttribute('data-id'));document.getElementById('helptext_collapse_'+this.getAttribute('data-id')).click();"
               innerHTML: 'Got it!'
             -
               type: a

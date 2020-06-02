@@ -31,6 +31,9 @@ box:
           innerHTML: _
     -
       type: p
+      attribute:
+        style:
+          font-size: smaller
       innerHTML:
         -
           type: span

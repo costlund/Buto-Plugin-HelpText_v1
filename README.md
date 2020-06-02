@@ -47,3 +47,8 @@ Show this page in a modal.
 ```
 PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/helptext', lable: 'Helptext', footer_btn_close: true})
 ```
+
+## Schema
+```
+/mysql/schema.yml
+```

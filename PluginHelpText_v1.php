@@ -172,6 +172,7 @@ class PluginHelpText_v1{
      * Mysql data.
      */
     $rs = $this->db_text_select_one($data->get('data/id'));
+    $rs->set('id_collapse', 'helptext_collapse_'.$rs->get('id'));
     /**
      * 
      */
