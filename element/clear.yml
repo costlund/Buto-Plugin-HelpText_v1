@@ -1,18 +1,33 @@
 -
-  type: p
+  type: div
+  settings:
+    globals:
+      -
+        path_to_key: 'settings/plugin/i18n/translate_v1/settings/path'
+        value: '/plugin/help/text_v1/i18n'
   innerHTML:
     -
-      type: i
-      innerHTML: Help text showing here are closed or confirmed by you.
--
-  type: p
-  innerHTML:
+      type: p
+      innerHTML:
+        -
+          type: i
+          innerHTML: helptext_i18n_user_info
     -
-      type: a
+      type: div
+      settings:
+        disabled: rs:sizeof
       attribute:
-        class: btn btn-primary btn-sm
-        id: btn_helptext_clear
-      innerHTML: Restore
+        class: alert alert-warning
+      innerHTML: helptext_i18n_user_info_no_records
+    -
+      type: p
+      innerHTML:
+        -
+          type: a
+          attribute:
+            class: btn btn-primary btn-sm
+            id: btn_helptext_clear
+          innerHTML: Restore
 -
   type: script
   innerHTML: |

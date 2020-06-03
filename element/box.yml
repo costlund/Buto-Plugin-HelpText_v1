@@ -1,5 +1,10 @@
 box:
   type: div
+  settings:
+    globals:
+      -
+        path_to_key: 'settings/plugin/i18n/translate_v1/settings/path'
+        value: '/plugin/help/text_v1/i18n'
   attribute:
     class: alert alert-info
     id: alert

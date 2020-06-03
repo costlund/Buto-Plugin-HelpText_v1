@@ -1,10 +1,26 @@
 -
   type: div
+  settings:
+    globals:
+      -
+        path_to_key: 'settings/plugin/i18n/translate_v1/settings/path'
+        value: '/plugin/help/text_v1/i18n'
   attribute:
     id: rs:helptext_id
     data-id: rs:id
     data-confirm: 'no'
   innerHTML:
+    -
+      type: div
+      attribute:
+        style:
+          display: none
+      innerHTML:
+        -
+          type: p
+          attribute:
+            id: helptext_i18n_helptext
+          innerHTML: helptext_i18n_helptext
     -
       type: p
       innerHTML:
@@ -62,6 +78,20 @@
           innerHTML: rs:description
         -
           type: p
+          settings:
+            enabled: rs:created_at
+          attribute:
+            style:
+              font-size: smaller
+          innerHTML: 
+            -
+              type: span
+              innerHTML: 'Confirmed:'
+            -
+              type: span
+              innerHTML: rs:created_at
+        -
+          type: p
           innerHTML:
             -
               type: button
@@ -78,7 +108,7 @@
                 title: 'Webmaster only.'
                 class: btn btn-warning btn-sm
                 data-id: rs:id
-                onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.getAttribute('data-id'), label: 'Hjälptext', footer_btn_close: true, footer_btn_close_text: PluginI18nJson_v1.i18n('Close')})"
+                onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.getAttribute('data-id'), label: $('#helptext_i18n_helptext').html()})"
               innerHTML: Edit
               settings:
                 role:

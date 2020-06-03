@@ -29,11 +29,18 @@ render:
 capture:
   plugin: help/text_v1
   method: form_capture
-buttons:
-  close:
-    type: a
-    attribute:
-      class: btn btn-primary
-      data-dismiss: modal
-    innerHTML: Close
-    
+settings:
+  globals:
+    -
+      path_to_key: 'settings/plugin/i18n/translate_v1/settings/path'
+      value: '/plugin/help/text_v1/i18n'
+elements_below:
+  -
+    type: p
+    innerHTML:
+      -
+        type: strong
+        innerHTML: User confirms
+      -
+        type: span
+        innerHTML: rs:count

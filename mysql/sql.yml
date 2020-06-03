@@ -65,9 +65,10 @@ confirm_insert:
       type: s
       value: _
 confirm_select_list:  
-  sql: select helptext_text_id from helptext_confirm where account_id='[user_id]';
+  sql: select helptext_text_id, created_at from helptext_confirm where account_id='[user_id]';
   select:
     - helptext_text_id
+    - created_at
 confirm_delete:
   sql: delete from helptext_confirm where account_id='[user_id]';
 confirm_select_by_text_count:
