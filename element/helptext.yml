@@ -38,6 +38,9 @@
             onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/no', function( data ) {});this.getElementsByTagName('img')[0].style.opacity='0.2';this.getElementsByTagName('span')[0].style.opacity='0.2';"
           innerHTML:
             -
+              type: style
+              innerHTML: '.helptext_headline{vertical-align: middle}'
+            -
               type: img
               settings:
                 disabled: rs:confirm
@@ -55,6 +58,8 @@
               type: span
               settings:
                 disabled: rs:confirm
+              attribute:
+                class: helptext_headline
               innerHTML: rs:headline
             -
               type: span
@@ -63,6 +68,7 @@
               attribute:
                 style:
                   opacity: '0.2'
+                class: helptext_headline
               innerHTML: rs:headline
     -
       type: div
