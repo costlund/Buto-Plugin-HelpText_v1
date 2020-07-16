@@ -194,7 +194,7 @@ class PluginHelpText_v1{
     /**
      * If record is missing.
      */
-    if(!$rs->get('id') && wfUser::hasRole('webmaster')){
+    if(!$rs->get('id') && $this->is_admin()){
       $rs->set('id', $data->get('data/id'));
       $rs->set('headline', '_');
       $rs->set('description', '_');
@@ -279,7 +279,7 @@ class PluginHelpText_v1{
     
   }
   public function page_form(){
-    if(!wfUser::hasRole('webmaster')){
+    if(!$this->is_admin()){
       exit('');
     }
     /**
@@ -295,7 +295,7 @@ class PluginHelpText_v1{
     wfDocument::renderElement(array($widget));
   }
   public function page_capture(){
-    if(!wfUser::hasRole('webmaster')){
+    if(!$this->is_admin()){
       exit('');
     }
     $form = $this->getForm('text');
@@ -308,5 +308,11 @@ class PluginHelpText_v1{
       $this->session_set($value);
     }
     return null;
+  }
+  private function is_admin(){
+    if(wfUser::hasRole('webmaster') || wfUser::hasRole('webadmin')){
+      return true;
+    }
+    return false;
   }
 }
