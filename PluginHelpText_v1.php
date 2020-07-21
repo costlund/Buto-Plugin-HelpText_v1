@@ -55,6 +55,9 @@ class PluginHelpText_v1{
     $this->db_open();
     $this->mysql->execute($sql->get());
     $rs = new PluginWfArray($this->mysql->getStmtAsArrayOne());
+    if(!$rs->get('id')){
+      $rs->set('id', null);
+    }
     return $rs;
   }
   private function db_text_select_list(){
@@ -198,8 +201,6 @@ class PluginHelpText_v1{
       $rs->set('id', $data->get('data/id'));
       $rs->set('headline', '_');
       $rs->set('description', '_');
-    }elseif(!$rs->get('id')){
-      throw new Exception('PluginHelpText_v1 says: Param id is empty.');
     }
     /**
      * 

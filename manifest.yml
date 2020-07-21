@@ -1,5 +1,9 @@
-version: '1.3.2'
+version: '1.3.3'
 history:
+  '1.3.3':
+    date: '2020-07-21'
+    title: Error when no record
+    description: Error when no record in db.helptext_text and user not admin.
   '1.3.2':
     date: '2020-07-16'
     title: Role webadmin

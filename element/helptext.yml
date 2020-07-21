@@ -5,6 +5,7 @@
       -
         path_to_key: 'settings/plugin/i18n/translate_v1/settings/path'
         value: '/plugin/help/text_v1/i18n'
+    enabled: rs:id
   attribute:
     id: rs:helptext_id
     data-id: rs:id
