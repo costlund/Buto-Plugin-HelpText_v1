@@ -1,42 +1,49 @@
-version: '1.3.3'
+version: 1.3.4
 history:
-  '1.3.3':
+  1.3.4:
+    date: '2020-11-16'
+    title: 'Dependencies'
+    description: 'Remove dependencies of wf/form_v2.'
+  1.3.3:
     date: '2020-07-21'
-    title: Error when no record
-    description: Error when no record in db.helptext_text and user not admin.
-  '1.3.2':
+    title: 'Error when no record'
+    description: 'Error when no record in db.helptext_text and user not admin.'
+  1.3.2:
     date: '2020-07-16'
-    title: Role webadmin
-    description: Only user with role webmaster could edit. Now also role webadmin can.
-  '1.3.1':
+    title: 'Role webadmin'
+    description: 'Only user with role webmaster could edit. Now also role webadmin can.'
+  1.3.1:
     date: '2020-07-10'
     title: Layout
-    description: Vertical align middle button text.
-  '1.3.0':
+    description: 'Vertical align middle button text.'
+  1.3.0:
     date: '2020-06-03'
-    title: I18N and layout
-    description: I18N and layout improvements.
-  '1.2.0':
+    title: 'I18N and layout'
+    description: 'I18N and layout improvements.'
+  1.2.0:
     date: '2020-06-02'
-    title: Button Got it, layout, icon
-    description: Button Got it is always visible and collaps content on click. Layout fix. Label along with icon.
-  '1.1.0':
+    title: 'Button Got it, layout, icon'
+    description: 'Button Got it is always visible and collaps content on click. Layout fix. Label along with icon.'
+  1.1.0:
     date: '2019-10-25'
-    title: New layout.
+    title: 'New layout.'
     description: 'Help button is always there.'
-  '1.0.0':
+  1.0.0:
     date: '2019-01-11'
     description: 'First version.'
 plugin:
   -
     name: wf/yml
-    version: '1.1'
+    version: 1.2.2
   -
     name: wf/mysql
-    version: '1.2'
+    version: 1.11.0
   -
-    name: wf/form_v2
-    version: 1.4
+    name: i18n/translate_v1
+    version: 1.7.0
+  -
+    name: form/form_v1
+    version: 1.48.2
 sys:
   -
     name: mercury

@@ -5,7 +5,6 @@ class PluginHelpText_v1{
   private $i18n;
   function __construct($buto) {
     if($buto){
-      wfPlugin::enable('wf/form_v2');
       wfPlugin::includeonce('wf/yml');
       wfPlugin::includeonce('wf/mysql');
       $this->mysql =new PluginWfMysql();
@@ -300,7 +299,7 @@ class PluginHelpText_v1{
       exit('');
     }
     $form = $this->getForm('text');
-    $widget = wfDocument::createWidget('wf/form_v2', 'capture', $form->get());
+    $widget = wfDocument::createWidget('form/form_v1', 'capture', $form->get());
     wfDocument::renderElement(array($widget));
   }
   public function event_signin(){
