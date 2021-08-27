@@ -1,15 +1,18 @@
-Got it!: Förstår!
+'Got it!': Förstår!
 Edit: Ändra
 Clear: Töm
-Clear user confirms on save.: Töm användar-bekräftelser vid spara.
+'Clear user confirms on save.': 'Töm användar-bekräftelser vid spara.'
 Headline: Rubrik
 Description: Beskrivning
 helptext_i18n_helptext: Hjälptext
-User confirms: Användar-bekräftelser
-helptext_i18n_item_was_saved: Posten sparades.
+'User confirms': Användar-bekräftelser
+helptext_i18n_item_was_saved: 'Posten sparades.'
 Restore: Återställ
-helptext_i18n_user_info: Hjälp-text som visas här är läst och/eller bekräftad av er.
+helptext_i18n_user_info: 'Hjälp-text som visas här är läst och/eller bekräftad av er.'
 'Confirmed:': 'Bekräftad:'
 Permanent: Permanent
 Temporary: Temporärt
-helptext_i18n_user_info_no_records: Det finns inga bekräftade hjälp-texter att visa.
+helptext_i18n_user_info_no_records: 'Det finns inga bekräftade hjälp-texter att visa.'
+Yes: Ja
+Save: Spara
+No: Nej

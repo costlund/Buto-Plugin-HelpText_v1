@@ -1,0 +1,18 @@
+'Got it!': 'J''ai compris!'
+Edit: Éditer
+Clear: Dégager
+'Clear user confirms on save.': 'Effacer l''utilisateur confirme lors de l''enregistrement.'
+Headline: 'Gros titre'
+Description: 'La description'
+helptext_i18n_helptext: 'Texte d''aide'
+'User confirms': 'L''utilisateur confirme'
+helptext_i18n_item_was_saved: 'Le message a été enregistré.'
+Restore: Restaurer
+helptext_i18n_user_info: 'Le texte d''aide affiché ici a été lu et/ou confirmé par vous.'
+'Confirmed:': 'Confirmé:'
+Permanent: Permanent
+Temporary: Temporaire
+helptext_i18n_user_info_no_records: 'Il n''y a aucun texte d''aide confirmé à afficher.'
+Yes: Oui
+Save: Sauvegarder
+No: Non

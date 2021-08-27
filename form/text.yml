@@ -2,10 +2,12 @@ url: '/helptext/capture'
 ajax: true
 submit_value: Save
 id: frm_helptext
+i18n: 
+  path: /plugin/help/text_v1/i18n
 items:
   id:
     type: hidden
-    label: id
+    label: 
     mandatory: true
   headline:
     type: varchar

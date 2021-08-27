@@ -59,6 +59,7 @@
               type: span
               settings:
                 disabled: rs:confirm
+                i18n: false
               attribute:
                 class: helptext_headline
               innerHTML: rs:headline
@@ -66,6 +67,7 @@
               type: span
               settings:
                 enabled: rs:confirm
+                i18n: false
               attribute:
                 style:
                   opacity: '0.2'
@@ -79,13 +81,18 @@
       innerHTML:
         -
           type: h2
+          settings:
+            i18n: false
           innerHTML: rs:headline
         -
           type: p
+          settings:
+            i18n: false
           innerHTML: rs:description
         -
           type: p
           settings:
+            i18n: false
             enabled: rs:created_at
           attribute:
             style:
@@ -96,6 +103,8 @@
               innerHTML: 'Confirmed:'
             -
               type: span
+              settings:
+                i18n: false
               innerHTML: rs:created_at
         -
           type: p

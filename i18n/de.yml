@@ -1,0 +1,18 @@
+Yes: Jawohl
+'User confirms': 'Benutzer bestätigt'
+Temporary: Vorübergehend
+Save: Speichern
+Restore: Wiederherstellen
+Permanent: Dauerhaft
+No: Nein
+helptext_i18n_user_info_no_records: 'Es sind keine bestätigten Hilfetexte zum Anzeigen vorhanden.'
+helptext_i18n_user_info: 'Hier angezeigter Hilfetext wurde von Ihnen gelesen und / oder bestätigt.'
+helptext_i18n_item_was_saved: 'Der Beitrag wurde gespeichert.'
+helptext_i18n_helptext: Hilfstext
+Headline: Überschrift
+'Got it!': 'Ich habs!'
+Edit: Bearbeiten
+Description: Beschreibung
+'Confirmed:': 'Bestätigt:'
+'Clear user confirms on save.': 'Benutzer löschen bestätigt beim Speichern.'
+Clear: Klar
