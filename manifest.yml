@@ -1,5 +1,9 @@
-version: 1.4.0
+version: 1.4.1
 history:
+  1.4.1:
+    date: '2022-07-20'
+    title: Versions
+    description: 'Versions update.'
   1.4.0:
     date: '2022-07-20'
     title: Video
@@ -53,13 +57,13 @@ plugin:
     version: 1.4.0
   -
     name: wf/mysql
-    version: 1.14.7
+    version: 1.14.8
   -
     name: i18n/translate_v1
     version: 1.7.8
   -
     name: form/form_v1
-    version: 1.52.3
+    version: 1.53.0
 sys:
   -
     name: mercury
