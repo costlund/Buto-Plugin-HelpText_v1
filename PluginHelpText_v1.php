@@ -29,9 +29,7 @@ class PluginHelpText_v1{
   public function form_render($form){
     $form = new PluginWfArray($form);
     $rs = $this->db_text_select_one(wfRequest::get('id'));
-    $form->set('items/id/default', wfRequest::get('id'));
-    $form->set('items/headline/default', $rs->get('headline'));
-    $form->set('items/description/default', $rs->get('description'));
+    $form->setByTag($rs->get());
     return $form->get();
   }
   public function form_capture(){
@@ -84,7 +82,6 @@ class PluginHelpText_v1{
     }
     return $rs;
   }
-  
   private function db_text_insert($id){
     $sql = $this->getSql('text_insert');
     $this->db_open();
@@ -95,9 +92,6 @@ class PluginHelpText_v1{
   private function db_text_update(){
     $sql = $this->getSql('text_update');
     $this->db_open();
-    $sql->set('params/id/value', wfRequest::get('id'));
-    $sql->set('params/headline/value', wfRequest::get('headline'));
-    $sql->set('params/description/value', wfRequest::get('description'));
     $this->mysql->execute($sql->get());
     return null;
   }

@@ -3,7 +3,8 @@ text_select_one:
     select 
     t.id,
     t.headline,
-    t.description
+    t.description,
+    t.video
     from helptext_text as t
     where t.id=?
     ;
@@ -11,6 +12,7 @@ text_select_one:
     - id
     - headline
     - description
+    - video
   params:
     id:
       type: s
@@ -21,7 +23,8 @@ text_select_list:
     t.id,
     t.headline,
     t.description,
-    t.place
+    t.place,
+    t.video
     from helptext_text as t
     order by t.headline
     ;
@@ -30,7 +33,7 @@ text_select_list:
     - headline
     - description
     - place
-    
+    - video
 text_insert:
   sql: "insert into helptext_text (id, created_by) values (?, '[user_id]');"
   params:
@@ -38,17 +41,20 @@ text_insert:
       type: s
       value: _
 text_update:
-  sql: "update helptext_text set headline=?, description=?, updated_at=now(), updated_by='[user_id]' where id=?;"
+  sql: "update helptext_text set headline=?, description=?, video=?, updated_at=now(), updated_by='[user_id]' where id=?;"
   params:
     headline:
       type: s
-      value: _
+      value: get:headline
     description:
       type: s
-      value: _
+      value: get:description
+    video:
+      type: s
+      value: get:video
     id:
       type: s
-      value: _
+      value: get:id
 confirm_select_one:
   sql: select account_id, helptext_text_id from helptext_confirm where account_id='[user_id]' and helptext_text_id=?;
   params:

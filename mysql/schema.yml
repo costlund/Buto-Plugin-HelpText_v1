@@ -11,6 +11,8 @@ tables:
         type: text
       place:
         type: text
+      video:
+        type: text
   helptext_confirm:
     field:
       account_id:

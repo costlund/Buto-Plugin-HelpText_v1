@@ -9,14 +9,23 @@ items:
     type: hidden
     label: 
     mandatory: true
+    default: rs:id
   headline:
     type: varchar
     label: Headline
     mandatory: true
+    default: rs:headline
   description:
     type: text
     label: Description
     mandatory: true
+    default: rs:description
+  video:
+    type: text
+    label: Video
+    info:
+      text: 'From Youtube insert embed code, link, or id.'
+    default: rs:video
   clear:
     type: varchar
     label: Clear

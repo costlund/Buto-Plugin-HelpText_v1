@@ -90,6 +90,15 @@
             i18n: false
           innerHTML: rs:description
         -
+          type: widget
+          settings:
+            enabled: rs:video
+          data:
+            plugin: video/youtube_embed
+            method: embed
+            data:
+              value: rs:video
+        -
           type: p
           settings:
             i18n: false
