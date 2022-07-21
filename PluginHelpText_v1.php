@@ -7,6 +7,7 @@ class PluginHelpText_v1{
     if($buto){
       wfPlugin::includeonce('wf/yml');
       wfPlugin::includeonce('wf/mysql');
+      wfPlugin::enable('video/youtube_embed');
       $this->mysql =new PluginWfMysql();
       $this->settings = wfPlugin::getPluginSettings('help/text_v1', true);
       /**
