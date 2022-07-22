@@ -30,7 +30,10 @@ class PluginHelpText_v1{
   public function form_render($form){
     $form = new PluginWfArray($form);
     $rs = $this->db_text_select_one(wfRequest::get('id'));
-    $form->setByTag($rs->get());
+    if(!$rs->get('id')){
+      $rs->set('id', wfRequest::get('id'));
+    }
+    $form->setByTag($rs->get(), 'rs', true);
     return $form->get();
   }
   public function form_capture(){
@@ -193,8 +196,8 @@ class PluginHelpText_v1{
      */
     if(!$rs->get('id') && $this->is_admin()){
       $rs->set('id', $data->get('data/id'));
-      $rs->set('headline', '_');
-      $rs->set('description', '_');
+      $rs->set('headline', '(Add headline)');
+      $rs->set('description', '(Add description)');
     }
     /**
      * 
@@ -217,7 +220,7 @@ class PluginHelpText_v1{
     /**
      * Set element.
      */
-    $element->setByTag($rs->get());
+    $element->setByTag($rs->get(), 'rs', true);
     /**
      * Render.
      */
