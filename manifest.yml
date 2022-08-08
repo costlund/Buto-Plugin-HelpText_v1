@@ -1,5 +1,9 @@
-version: 1.5.1
+version: 1.5.2
 history:
+  1.5.2:
+    date: '2022-08-08'
+    title: Versions
+    description: 'Versions update.'
   1.5.1:
     date: '2022-07-22'
     title: Form
@@ -75,6 +79,7 @@ plugin:
   -
     name: video/youtube_embed
     verson: 1.0.0
+    version: 1.0.0
 sys:
   -
     name: mercury
