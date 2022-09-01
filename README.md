@@ -1,8 +1,10 @@
 # Buto-Plugin-HelpText_v1
-Show a button with helptext label. When user click description is shown and a session param is set. Next time buttons shows up a tick icon are visible. User can also click a button GOT IT to permanently has this ticket. A record i db is stored in this case.
-
-
-
+- Show a button with helptext label where to show help text.
+- When user click button it remainds dimed rest of the session.
+- User can click button "Got it" to made button dimed permanently (saved in db).
+- User can clear in db.
+- A video could be added.
+- User with role webadmin could add/edit posts.
 
 ## Settings
 In theme config/settings.yml.
@@ -37,7 +39,6 @@ data:
 
 ## Page
 Add page plugin where user can view items.
-
 ```
 plugin_modules:
   helptext:

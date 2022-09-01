@@ -1,0 +1,71 @@
+-
+  type: div
+  settings:
+    globals:
+      -
+        path_to_key: 'settings/plugin/i18n/translate_v1/settings/path'
+        value: '/plugin/help/text_v1/i18n'
+  innerHTML:
+    -
+      type: h2
+      settings:
+        i18n: false
+      innerHTML: rs:headline
+    -
+      type: p
+      settings:
+        i18n: false
+      innerHTML: rs:description
+    -
+      type: widget
+      settings:
+        enabled: rs:video
+      data:
+        plugin: video/youtube_embed
+        method: embed
+        data:
+          value: rs:video
+    -
+      type: p
+      settings:
+        i18n: false
+        enabled: rs:created_at
+      attribute:
+        style:
+          font-size: smaller
+      innerHTML: 
+        -
+          type: span
+          innerHTML: 'Confirmed:'
+        -
+          type: span
+          settings:
+            i18n: false
+          innerHTML: rs:created_at
+    -
+      type: p
+      innerHTML:
+        -
+          type: button
+          attribute:
+            id: btn_confirm
+            type: button
+            class: btn btn-primary btn-sm
+            data-content: 'Got it saved!'
+            data-id: rs:id
+            #onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/yes', function( data ) {});console.log(this.getAttribute('data-id'));document.getElementById('helptext_collapse_'+this.getAttribute('data-id')).click();"
+            onclick: "$.get( '/helptext/confirm/id/'+this.getAttribute('data-id')+'/confirm/yes', function( data ) {});   alert(this.getAttribute('data-content'));  ;"
+          innerHTML: 'Got it!'
+        -
+          type: a
+          attribute:
+            title: 'Role webmaster or webadmin can edit.'
+            class: btn btn-warning btn-sm
+            data-id: rs:id
+            onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.getAttribute('data-id'), label: $('#helptext_i18n_helptext').html()})"
+          innerHTML: Edit
+          settings:
+            role:
+              item:
+                - webmaster
+                - webadmin

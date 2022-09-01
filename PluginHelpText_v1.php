@@ -176,54 +176,20 @@ class PluginHelpText_v1{
     unset($_SESSION['plugin']['help']['text_v1']['confirm']);
   }
   public function widget_helptext($data){
-    /**
-     * Plugin data.
-     */
     $data = new PluginWfArray($data);
-    /**
-     * Mysql data.
-     */
     $rs = $this->db_text_select_one($data->get('data/id'));
-    $rs->set('id_collapse', 'helptext_collapse_'.$rs->get('id'));
-    /**
-     * 
-     */
-    $rs->set('helptext_id', 'helptext_'.$rs->get('id'));
-    $rs->set('collapse_id', 'collapse_'.$rs->get('id'));
-    $rs->set('HT-collapse_id', '#collapse_'.$rs->get('id'));
-    /**
-     * If record is missing.
-     */
+    if($this->session_exist($rs->get('id'))){
+      $rs->set('confirm', true);
+    }else{
+      $rs->set('confirm', false);
+    }
     if(!$rs->get('id') && $this->is_admin()){
       $rs->set('id', $data->get('data/id'));
       $rs->set('headline', '(Add headline)');
       $rs->set('description', '(Add description)');
     }
-    /**
-     * 
-     */
-    $rs->set('description', str_replace("\n", '<br>', $rs->get('description')));
-    /**
-     * Check session.
-     */
-    if($this->session_exist($rs->get('id'))){
-      $rs->set('confirm', true);
-      $rs->set('created_at', $this->session_exist($rs->get('id')));
-    }else{
-      $rs->set('confirm', false);
-      $rs->set('created_at', null);
-    }
-    /**
-     * Element.
-     */
     $element = $this->getElement('helptext');
-    /**
-     * Set element.
-     */
     $element->setByTag($rs->get(), 'rs', true);
-    /**
-     * Render.
-     */
     wfDocument::renderElement($element->get());
   }
   public function page_confirm(){
@@ -275,6 +241,18 @@ class PluginHelpText_v1{
     wfDocument::renderElement($clear->get());
     wfDocument::renderElement($element);
     
+  }
+  public function page_view(){
+    $rs = $this->db_text_select_one(wfRequest::get('id'));
+    $rs->set('description', str_replace("\n", '<br>', $rs->get('description')));
+    if($this->session_exist($rs->get('id'))){
+      $rs->set('created_at', $this->session_exist($rs->get('id')));
+    }else{
+      $rs->set('created_at', null);
+    }
+    $element = $this->getElement('view');
+    $element->setByTag($rs->get());
+    wfDocument::renderElement($element);
   }
   public function page_form(){
     if(!$this->is_admin()){

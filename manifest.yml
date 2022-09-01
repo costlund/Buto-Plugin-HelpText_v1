@@ -1,5 +1,9 @@
-version: 1.5.2
+version: 1.6.0
 history:
+  1.6.0:
+    date: '2022-09-01'
+    title: Modal window
+    description: 'Show help text in a modal window.'
   1.5.2:
     date: '2022-08-08'
     title: Versions
