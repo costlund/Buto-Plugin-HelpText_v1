@@ -1,8 +1,12 @@
-version: 1.6.0
+version: 1.6.1
 history:
+  1.6.1:
+    date: '2022-09-07'
+    title: Versions
+    description: 'Versions update.'
   1.6.0:
     date: '2022-09-01'
-    title: Modal window
+    title: 'Modal window'
     description: 'Show help text in a modal window.'
   1.5.2:
     date: '2022-08-08'
@@ -70,7 +74,7 @@ history:
 plugin:
   -
     name: wf/yml
-    version: 1.4.0
+    version: 1.4.1
   -
     name: wf/mysql
     version: 1.14.8
@@ -79,7 +83,7 @@ plugin:
     version: 1.7.8
   -
     name: form/form_v1
-    version: 1.53.0
+    version: 1.54.0
   -
     name: video/youtube_embed
     verson: 1.0.0
