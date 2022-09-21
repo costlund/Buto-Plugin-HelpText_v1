@@ -62,7 +62,7 @@
             title: 'Role webmaster or webadmin can edit.'
             class: btn btn-warning btn-sm
             data-id: rs:id
-            onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form/id/'+this.getAttribute('data-id'), label: $('#helptext_i18n_helptext').html()})"
+            onclick: "PluginWfBootstrapjs.modal({id: 'modal_helptext', url: '/helptext/form?id='+this.getAttribute('data-id'), label: $('#helptext_i18n_helptext').html()})"
           innerHTML: Edit
           settings:
             role:

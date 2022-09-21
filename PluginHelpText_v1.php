@@ -55,10 +55,7 @@ class PluginHelpText_v1{
     $sql->set('params/id/value', $id);
     $this->db_open();
     $this->mysql->execute($sql->get());
-    $rs = new PluginWfArray($this->mysql->getStmtAsArrayOne());
-    if(!$rs->get('id')){
-      $rs->set('id', null);
-    }
+    $rs = $this->mysql->getOne(array('sql' => $sql->get()));
     return $rs;
   }
   private function db_text_select_list(){
@@ -244,6 +241,16 @@ class PluginHelpText_v1{
   }
   public function page_view(){
     $rs = $this->db_text_select_one(wfRequest::get('id'));
+    /**
+     * 
+     */
+    if(!$rs->get('id')){
+      $rs->set('id', wfRequest::get('id'));
+      $rs->set('headline', '(Add headline)');
+    }
+    /**
+     * 
+     */
     $rs->set('description', str_replace("\n", '<br>', $rs->get('description')));
     if($this->session_exist($rs->get('id'))){
       $rs->set('created_at', $this->session_exist($rs->get('id')));

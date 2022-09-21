@@ -7,7 +7,7 @@ i18n:
 items:
   id:
     type: hidden
-    label: 
+    label: id
     mandatory: true
     default: rs:id
   headline:
