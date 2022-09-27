@@ -1,5 +1,9 @@
-version: 1.7.0
+version: 1.7.1
 history:
+  1.7.1:
+    date: '2022-09-27'
+    title: Versions
+    description: 'Versions update.'
   1.7.0:
     date: '2022-09-21'
     title: Form
@@ -82,16 +86,16 @@ history:
 plugin:
   -
     name: wf/yml
-    version: 1.4.1
+    version: 1.5.0
   -
     name: wf/mysql
-    version: 1.14.8
+    version: 1.14.9
   -
     name: i18n/translate_v1
     version: 1.9.0
   -
     name: form/form_v1
-    version: 1.54.0
+    version: 1.54.2
   -
     name: video/youtube_embed
     verson: 1.0.0
