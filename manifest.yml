@@ -1,5 +1,9 @@
-version: 1.7.2
+version: 1.7.3
 history:
+  1.7.3:
+    date: '2023-01-02'
+    title: Versions
+    description: 'Versions update.'
   1.7.2:
     date: '2022-10-13'
     title: Versions
@@ -90,16 +94,16 @@ history:
 plugin:
   -
     name: wf/yml
-    version: 1.5.0
+    version: 1.5.1
   -
     name: wf/mysql
-    version: 1.14.9
+    version: 1.15.0
   -
     name: i18n/translate_v1
-    version: 1.9.0
+    version: 1.10.0
   -
     name: form/form_v1
-    version: 1.56.0
+    version: 1.57.1
   -
     name: video/youtube_embed
     verson: 1.0.0
