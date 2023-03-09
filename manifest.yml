@@ -1,5 +1,9 @@
-version: 1.7.3
+version: 1.7.4
 history:
+  1.7.4:
+    date: '2023-03-09'
+    title: Versions
+    description: 'Versions update.'
   1.7.3:
     date: '2023-01-02'
     title: Versions
@@ -103,7 +107,7 @@ plugin:
     version: 1.10.0
   -
     name: form/form_v1
-    version: 1.57.1
+    version: 1.58.1
   -
     name: video/youtube_embed
     verson: 1.0.0
