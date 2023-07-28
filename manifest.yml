@@ -1,5 +1,9 @@
-version: 1.7.6
+version: 1.7.7
 history:
+  1.7.7:
+    date: '2023-07-28'
+    title: Versions
+    description: 'Versions update.'
   1.7.6:
     date: '2023-05-29'
     title: Versions
@@ -112,10 +116,10 @@ plugin:
     version: 1.15.0
   -
     name: i18n/translate_v1
-    version: 1.11.0
+    version: 1.12.0
   -
     name: form/form_v1
-    version: 1.59.0
+    version: 1.59.1
   -
     name: video/youtube_embed
     verson: 1.0.0
