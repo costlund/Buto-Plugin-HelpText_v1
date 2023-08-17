@@ -251,7 +251,7 @@ class PluginHelpText_v1{
     /**
      * 
      */
-    $rs->set('description', str_replace("\n", '<br>', $rs->get('description')));
+    $rs->set('description', wfPhpfunc::str_replace("\n", '<br>', $rs->get('description')));
     if($this->session_exist($rs->get('id'))){
       $rs->set('created_at', $this->session_exist($rs->get('id')));
     }else{
